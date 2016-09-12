@@ -1,0 +1,13 @@
+{
+  "name": "simpleformidable",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Servidor con un formulario sencillo que usa formidable",
+  "author": "Fernando de la Iglesia <fernando.delaigleisa@gmail.com>",
+  "dependencies": {
+    "formidable": "1.0.17"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

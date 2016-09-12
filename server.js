@@ -28,7 +28,7 @@ http.createServer(function(req, res) {
         /* The file name of the uploaded file */
         var file_name = this.openedFiles[0].name;
         /* Location where we want to copy the uploaded file */
-        var new_location = 'c:/localhost/nodejs/';
+        var new_location = './';
  
         fs.copy(temp_path, new_location + file_name, function(err) {  
             if (err) {
@@ -45,11 +45,14 @@ http.createServer(function(req, res) {
   /* Display the file upload form. */
   res.writeHead(200, {'content-type': 'text/html'});
   res.end(
+    '<html><head><title>Hello Noder!</title></head><body background="logo.jpg">'+
+    '<h1>Welcome Noder, who are you?</h1>'+
     '<form action="/upload" enctype="multipart/form-data" method="post">'+
     '<input type="text" name="title"><br>'+
     '<input type="file" name="upload" multiple="multiple"><br>'+
     '<input type="submit" value="Upload">'+
-    '</form>'
+    '</form>'+
+    '</body></html>'
   );
  
-}).listen(8080);
+}).listen(8000);
