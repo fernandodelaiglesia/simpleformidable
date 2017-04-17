@@ -44,18 +44,18 @@ http.createServer(function(req, res) {
  
   /* Display the file upload form. */
   res.writeHead(200, {'content-type': 'text/html'});
-  download(imagen, './logo.jpg', function(){
+  download(imagen, 'logo.jpg', function(){
   	console.log('done');
-  });
-  res.end(
+  	  res.end(
     '<html><head><title>Hello Noder!</title></head><body background="/logo.jpg">'+
     '<h1>Welcome Noder, who are you?</h1>'+
     '<form action="/upload" enctype="multipart/form-data" method="post">'+
     '<input type="text" name="title"><br>'+
     '<input type="file" name="upload" multiple="multiple"><br>'+
     '<input type="submit" value="Upload">'+
-    '</form>'+
-    '</body></html>'
+    '</form>'
   );
+
+  });
  
 }).listen(8000);
